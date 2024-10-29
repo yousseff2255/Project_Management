@@ -27,8 +27,8 @@ body {
     border-color: #12cad6; /* Border color */
 }
 
-    .btn-outline-custom:hover {
-        color: #ffffff; /* Text color on hover */
-        background-color: #12cad6; /* Background color on hover */
-        border-color: #12cad6; /* Border color on hover */
-    }
+.btn-outline-custom:hover {
+    color: #ffffff; /* Text color on hover */
+    background-color: #12cad6; /* Background color on hover */
+    border-color: #12cad6; /* Border color on hover */
+}

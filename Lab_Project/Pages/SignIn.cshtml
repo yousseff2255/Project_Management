@@ -1,23 +1,28 @@
 ﻿@page
-@model Lab_Project.Pages.Shared.SignUpModel
+@model Lab_Project.Pages.SignInModel
 @{
+    ViewData["Session"] = @Model.session;
 }
 <div class="login-container" style="max-width: 400px; margin: 100px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     <h2 class="text-center" style="margin-bottom: 20px;">Login Page</h2>
-    <form>
+    <form method="post" >
         <div class="mb-3">
-            <label for="username" class="form-label" style="width: 50%;">Email address</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter your Username" required>
+            <label for="username" class="form-label" style="width: 50%;">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your Username" asp-for="@Model.user.username">
+            <span class="text-danger" asp-validation-for="@Model.user.username"></span>
+
         </div>
+      
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password" asp-for="@Model.user.password">
+            <span class="text-danger" asp-validation-for="@Model.user.password"></span>
         </div>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="rememberMe">
             <label class="form-check-label" for="rememberMe">Remember me</label>
         </div>
-        <button type="submit" class="btn w-25" style="background-color: #12cad6; color: white; margin-top: 10px;">Login</button>
+        <button type="submit" class="btn w-25" style="background-color: #12cad6; color: white; margin-top: 10px;" asp-page-handler="login">Login</button>
         <div class="text-center mt-3">
             <a href="#" style="color: #12cad6;">Forgot your password?</a>
         </div>
