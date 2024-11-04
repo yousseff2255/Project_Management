@@ -7,6 +7,8 @@
         {
             role = "Advisor"; 
         }
-       
+
+        public string Major { get; set; }
+        public string Specialiaztion { get; set; }
     }
 }

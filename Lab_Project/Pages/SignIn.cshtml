@@ -18,17 +18,9 @@
             <input type="password" class="form-control" id="password" placeholder="Enter your password" asp-for="@Model.user.password">
             <span class="text-danger" asp-validation-for="@Model.user.password"></span>
         </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="rememberMe">
-            <label class="form-check-label" for="rememberMe">Remember me</label>
-        </div>
+
         <button type="submit" class="btn w-25" style="background-color: #12cad6; color: white; margin-top: 10px;" asp-page-handler="login">Login</button>
-        <div class="text-center mt-3">
-            <a href="#" style="color: #12cad6;">Forgot your password?</a>
-        </div>
-        <div class="text-center mt-2">
-            <span>Don't have an account? <a href="#" style="color: #12cad6;">Sign up</a></span>
-        </div>
+
         
     </form>
 </div>
