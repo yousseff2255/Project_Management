@@ -1,0 +1,57 @@
+﻿@page
+@model Lab_Project.Pages.ProjectDetailsModel
+@{
+}
+
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header text-white" style="background-color:#12cad6">
+            <h3 class="card-title">Project Details</h3>
+        </div>
+        <div class="card-body">
+            <!-- Project Information -->
+            <h4 class="text-secondary">Project Information</h4>
+            <ul class="list-group mb-4">
+                <li class="list-group-item"><strong>Title:</strong> @Model.p.title</li>
+                <li class="list-group-item"><strong>Description:</strong> @Model.p.description</li>
+                <li class="list-group-item"><strong>Year:</strong> @Model.p.year</li>
+                <li class="list-group-item"><strong>Focus Area:</strong> @Model.p.focus_area</li>
+                <li class="list-group-item"><strong>Status:</strong> @Model.p.status</li>
+            </ul>
+
+            <!-- Team Members -->
+            <h4 class="text-secondary">Team Members</h4>
+            <ul class="list-group mb-4">
+                @{
+                    foreach (System.Data.DataRow row in @Model.dt1.Rows)
+                    {
+                        <li class="list-group-item">@row[0]</li>
+                    }
+              
+                }
+             
+                
+            </ul>
+
+            <!-- Advisor -->
+            <h4 class="text-secondary">Advisor</h4>
+            <ul class="list-group mb-4">
+                <li class="list-group-item"@Model.p.advisor</li>
+            </ul>
+
+            <!-- Links -->
+            <h4 class="text-secondary">Project Links</h4>
+            <ul class="list-group mb-4">
+                <li class="list-group-item">
+                    <strong>Thesis Document:</strong>
+                    <a href="@Model.p.thesis" target="_blank">View Thesis</a>
+                </li>
+                <li class="list-group-item">
+                    <strong>Demo Video:</strong>
+                    <a href="@Model.p.video" target="_blank">Watch Demo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
