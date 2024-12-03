@@ -4,25 +4,28 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Lab_Project.Pages.Admin
 {
-    public class CreateUsersModel : PageModel
+
+    public class CreateAdvisorModel : PageModel
     {
+        DB db;
         [BindProperty]
-        public Student s { get; set; }
-        public DB db { get; set; }
-        public CreateUsersModel(DB db)
+        public Advisor ad { get; set; }
+        public CreateAdvisorModel(DB db)
         {
             this.db = db;
-            s = new Student();
+            ad = new Advisor();
 
         }
+   
+
         public void OnGet()
         {
-
+           
         }
+        public IActionResult OnPost()
+        {
 
-        public IActionResult OnPost() {
-
-            db.AddStudent(s);
+            db.AddAdvisor(ad);
             return RedirectToPage("/Index");
         }
     }

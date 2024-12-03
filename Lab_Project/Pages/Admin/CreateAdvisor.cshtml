@@ -1,0 +1,52 @@
+﻿@page
+@model Lab_Project.Pages.Admin.CreateAdvisorModel
+@{
+}
+
+<div class="text-center" style="max-width: 500px; margin: 100px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h2 style="margin-bottom: 20px;">Create Advisor</h2>
+    <form method="post">
+        <div class="form-group mb-3">
+            <label for="name">Name</label>
+            <input asp-for="@Model.ad.name" type="text" class="form-control mb-2" id="name" placeholder="Enter name...">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="username">Username</label>
+            <input asp-for="@Model.ad.username" type="text" class="form-control mb-2" id="username" placeholder="Enter Username...">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="spec">Specialization</label>
+            <input asp-for="@Model.ad.Specialiaztion" type="text" class="form-control mb-2" id="spec" placeholder="Enter specialization...">
+        </div>
+
+       @*  <div class="form-group mb-3">
+            <label for="major">Major</label>
+            <input asp-for="@Model.ad.major" type="int" class="form-control mb-2" id="major" placeholder="Enter major...">
+        </div> *@
+
+        <div class="form-group mb-3">
+            <label for="email">Email</label>
+            <input asp-for="@Model.ad.email" type="email" class="form-control mb-2" id="email" placeholder="Enter email...">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="password">Password</label>
+            <input asp-for="@Model.ad.password" type="password" class="form-control mb-2" id="password" placeholder="Enter password...">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="conf_password">Confirm Password</label>
+            <input type="password" class="form-control mb-2" id="conf_password" placeholder="Confirm password...">
+        </div>
+
+
+
+        <button type="submit" class="btn" style="background-color: #12cad6; color: white;">Submit</button>
+    </form>
+</div>
+
+
+
+

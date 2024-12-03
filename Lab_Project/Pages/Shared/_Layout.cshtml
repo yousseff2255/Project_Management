@@ -29,6 +29,32 @@
                         <li class="nav-item">
                             <a class="nav-link " style="color:#12cad6" asp-area="" asp-page="/Index">Home</a>
                         </li>
+
+                        @{
+                            if(ViewData["UserType"] !=null){
+                            
+                                if (ViewData["UserType"].ToString() == "Admin")
+                            {
+                                <!-- Admin Pages -->
+                                <li class="nav-item">
+                                    <a class="nav-link " style="color:#12cad6" asp-area="" asp-page="/Admin/AddProject">Add Project</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " style="color:#12cad6" asp-area="" asp-page="/Admin/CreateUsers">Create Student</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " style="color:#12cad6" asp-area="" asp-page="/Admin/CreateAdvisor">Create Advisor</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " style="color:#12cad6" asp-area="" asp-page="/Admin/AdminStats">Stats</a>
+                                </li>
+                            }
+                            }}
+
+                            
+                       
+                              
+                        
                        
                     </ul>
                     
@@ -111,4 +137,7 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+<script type="module" src="~/lib/chartjs/chart.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </html>

@@ -1,0 +1,101 @@
+﻿@page
+@model Lab_Project.Pages.Admin.AddProjectModel
+@{
+}
+
+<div class="text-center" style="max-width: 500px; margin: 100px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h2 style="margin-bottom: 20px;">Create Project</h2>
+    <form method="post">
+        <div class="form-group mb-3">
+            <label for="id">Project ID</label>
+            <input type="text" class="form-control mb-2" id="id" placeholder="Enter id..." asp-for="@Model.p.Id" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="Title">Project Title</label>
+            <input asp-for="@Model.p.title" type="text" class="form-control mb-2" id="Title" placeholder="Enter title..." required>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="focus_area">Focus Area</label>
+            <input asp-for="@Model.p.focus_area" type="text" class="form-control mb-2" id="focus_area" placeholder="Enter focus area..." required>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="desc">Description</label>
+            <textarea asp-for="@Model.p.description" type=" text" class="form-control mb-2" id="desc" placeholder="Enter description..." required> </textarea>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="status">Status</label>
+            <select asp-for="@Model.p.status" class="form-control mb-2" id="status" required>
+                <option value="" disabled selected>Select status...</option>
+                <option value="Active">Active</option>
+                <option value="Completed">Completed</option>
+                <option value="Archived">Archived</option>
+            </select>
+        </div>
+
+
+        <div class="form-group mb-3">
+            <label for="year">Year</label>
+            <input asp-for="@Model.p.year" type=" number" class="form-control mb-2" id="year" placeholder="Enter Year..." required>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="video">Video Link</label>
+            <input asp-for="@Model.p.video "type=" text" class="form-control mb-2" id="video" placeholder="Enter Video link..." required>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="doc">Thesis Document Link</label>
+            <input asp-for="@Model.p.thesis" type=" text" class="form-control mb-2" id="doc" placeholder="Enter Thesis Document link..." required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="advisor">Advisor username</label>
+            <select asp-for="@Model.p.advisor" class="form-control mb-2" id="advisor" style="max-height: 200px; overflow-y: auto;" required>
+                <option value="" disabled selected>Select Advisor...</option>
+                @{
+                    foreach (var advisor in Model.advisors)
+                    {
+                        <option value="@advisor">@advisor</option>
+                    }
+                }
+            </select>
+        </div>
+
+  
+
+
+
+        <div class="form-group mb-3">
+            <label for="team">Team id</label>
+            <select asp-for="@Model.p.team_id" class="form-control mb-2" id="team" style="max-height: 200px; overflow-y: auto;" required>
+                <option value="" disabled selected>Select Team...</option>
+                @{
+                    foreach (var team in Model.teams)
+                    {
+                        <option value="@team">@team</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="dep_proj">dependent project id</label>
+            <select asp-for="@Model.p.Dep_project_id" class="form-control mb-2" id="dep_proj" style="max-height: 200px; overflow-y: auto;" required>
+                <option value="" disabled selected>Select Dependent Project...</option>
+                @{
+                    foreach (var project in Model.projects)
+                    {
+                        <option value="@project">@project</option>
+                    }
+                }
+            </select>
+        </div>
+        
+
+
+        <button type="submit" class="btn" style="background-color: #12cad6; color: white;">Submit</button>
+    </form>
+</div>
+

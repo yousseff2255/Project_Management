@@ -7,6 +7,6 @@
             role = "Student"; 
         }
         public int TeamId { get; set; }
-       
+        public int major {  get; set; }
     }
 }
